@@ -1,2 +1,0 @@
-El mensaje Hola Servidor fue recibido correctamente
-El mensaje Hola denuevo! fue recibido correctamente
