@@ -14,6 +14,7 @@ s_d2.connect(('datanode2',5002))
 s_d3.connect(('datanode3',5003))
 s_c.bind(('headnode',5000))
 s_c.listen(1)
+archivo = open("registro_server.txt","w")
 #Se acepta la conexion del cliente
 conn_c,addr_c = s_c.accept()
 print("Cliente con direccion IP:",addr_c[0],"se ha conectado")
