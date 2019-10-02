@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  server:
+    build:
+      context: ./appserver
+      dockerfile: Dockerfile
+    command: python3 /appserver/server.py
+    volumes:
+      - ./appserver:/appserver/
+    ports:
+      - 5000:5000
+  client:
+    build:
+      context: ./appclient
+      dockerfile: Dockerfile
+    command: python3 /appclient/cliente.py
+    volumes:
+      - ./appclient:/appclient/
+    depends_on:
+      - server

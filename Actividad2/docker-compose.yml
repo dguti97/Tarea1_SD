@@ -1,0 +1,52 @@
+version: "3"
+
+services:
+  headnode:
+    build:
+      context: ./Headnode
+      dockerfile: Dockerfile
+    command: python3 /Headnode/Headnode.py
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./Headnode:/Headnode/
+    depends_on:
+      - datanode1
+      - datanode2
+      - datanode3
+  datanode1:
+    build:
+      context: ./Datanode1
+      dockerfile: Dockerfile
+    command: python3 /Datanode1/datanode1.py
+    ports:
+      - "5001:5001"
+    volumes:
+      - ./Datanode1:/Datanode1/
+  datanode2:
+    build:
+      context: ./Datanode2
+      dockerfile: Dockerfile
+    command: python3 /Datanode2/datanode2.py
+    ports:
+      - "5002:5002"
+    volumes:
+      - ./Datanode2:/Datanode2/
+  datanode3:
+    build:
+      context: ./Datanode3
+      dockerfile: Dockerfile
+    command: python3 /Datanode3/datanode3.py
+    ports:
+      - "5003:5003"
+    volumes:
+      - ./Datanode3:/Datanode3/
+  cliente:
+    build:
+      context: ./Cliente
+      dockerfile: Dockerfile
+    command: python3 /Cliente/Cliente.py
+    volumes:
+      - ./Cliente:/Cliente/
+    depends_on:
+      - headnode
