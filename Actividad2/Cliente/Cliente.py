@@ -8,7 +8,7 @@ archivo= open("./registro_cliente.txt","w")
 #Se conecta el socket al  Headnode en el puerto 5000
 client.connect(('headnode', 5000))
 #Lista de losmensajes por defecto que se enviaran al Headnode
-lista = ["Hola Servidor!","¿Como estas?","Me aburri","exit"]
+lista = ["Hola Servidor!","Como estas","Me aburri","exit"]
 pos=0
 #Se realiza un while recorriendo la lista hasta llegar a la palabra exit.
 while True:
