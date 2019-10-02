@@ -5,9 +5,9 @@ datanode1 = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
 datanode1.bind(('datanode1',5001))
 datanode1.listen(1)
 #Se acepta la conexion del headnode
-conn_h,addr_h = datanode1.accept()
 archivo= open("./data.txt","w")
 while True:
+    conn_h,addr_h = datanode1.accept()
     #Recibe el mensaje que el Headnode recibio del Cliente
     received=conn_h.recv(4096)
     string=received.decode('utf-8')

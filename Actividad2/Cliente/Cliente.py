@@ -8,7 +8,7 @@ archivo= open("./registro_cliente.txt","w")
 #Se conecta el socket al  Headnode en el puerto 5000
 client.connect(('headnode', 5000))
 #Lista de losmensajes por defecto que se enviaran al Headnode
-lista = ["mensaje1","mensaje2","exit"]
+lista = ["Hola Servidor!","¿Como estas?","Me aburri","exit"]
 pos=0
 #Se realiza un while recorriendo la lista hasta llegar a la palabra exit.
 while True:
@@ -27,8 +27,8 @@ while True:
     print(string2)
     #Se continua con el siguiente mensaje.
     pos=pos+1
-    #Se demorara 10 segundos en mandar el siguiente mensaje, esto para que se pueda ver el multicast
-    time.sleep(10)
+    #Se demorara 5 segundos en mandar el siguiente mensaje, esto para que se pueda ver el multicast en accion.
+    time.sleep(5)
 #Se Cierra la Conexion.
 print("Cliente se desconecta")
 client.close()
